@@ -1,0 +1,82 @@
+@import "./reset.css";
+@import "./variable.css";
+@import "./reuse.css";
+@import "./typography.css";
+
+html:not(.dark){
+header{
+border: 1px solid var(--bor-main);  
+box-shadow: 0 2px 3px 0 #d9e5f4;
+}  
+}
+
+body {
+  font-family: "Noto Sans", sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  height: 100svh;
+  background-image: var(--gradient-bg);
+}
+
+.wrapper {
+  padding: 24px 16px;
+  max-width: 1170px;
+  height: 100%;
+  margin: 0 auto;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 12px;
+  border-radius: 10px;
+  background-color: var(--bg-block);
+  color: var(--txt-logo);
+
+  .extansionLogo{
+  font-family: "Geologica", sans-serif; 
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 1.3;
+  letter-spacing: -0.5px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  & > .icon{
+  width: 40px;
+  height: 41px;  
+  }
+
+  }
+
+  & > label {
+    position: relative;
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
+    background-color: var(--bg-theme-switcher);
+    border-radius: 12px;
+  }
+
+  & > label::before {
+    content: "";
+    width: 22px;
+    height: 22px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    translate:-50% -50%;
+    border-radius: 6px;
+    background-image: var(--theme-img);
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  & > label > input{
+    display: contents;
+  }
+
+}
+

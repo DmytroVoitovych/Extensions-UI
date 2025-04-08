@@ -1,0 +1,59 @@
+:root {
+    /* Neutral colors */
+    --neutral-900: #070E38;
+    --neutral-800: #202535;
+    --neutral-700: #333742;
+    --neutral-600: #555962;
+    --neutral-300: #C7C7C7;
+    --neutral-200: #D5E4F7;
+    --neutral-100: #eeeeee;
+    --neutral-0:  #fbfdfe;
+  
+    /* Red colors */
+    --red-400: #F25C54;
+    --red-500: #E34840;
+    --red-700: #c7231a;
+
+    --bg-block:var(--neutral-0);
+    --bg-theme-switcher:var(--neutral-100);
+    --bg-border-main:var(--neutral-200);
+    --bg-border-chackbox:var(--neutral-900);
+    
+    --logo-cl:var(--red-700); 
+    --bor-main:#D6E2F5;
+  
+    /* txt */
+    --txt-logo:var(--neutral-900);
+    --txt-cl-main:var(--neutral-900);
+    --txt-cl-title:var(--neutral-900);
+    --txt-cl-textarea:var(var(--neutral-700));
+    --txt-empty-point:var(--neutral-600);
+      
+  
+    /* Gradients */
+    --gradient-bg: linear-gradient(to bottom, #ebf2fc, #eefbf9), linear-gradient(to bottom, #fff, #fff);
+    --theme-img:url(../images/icon-moon.svg);
+    
+  }
+
+  html.dark{
+    --bg-block:var(--neutral-800);
+    --bg-textarea:var(--neutral-800);  
+    --bg-theme-switcher:var(--neutral-700);
+    --bg-border-main:var(--neutral-600);
+    --bg-border-chackbox:var(--neutral-200);
+    --bg-progress:var(--neutral-800);
+    
+    --logo-cl:var(--red-400); 
+  
+    /* txt */
+    --txt-logo:#fff;
+    --txt-cl-main:var(--neutral-200);
+    --txt-cl-title:var(--neutral-100);
+    --txt-cl-textarea:var(var(--neutral-200));
+    --txt-empty-point:var(--neutral-200);
+  
+    /* Gradients */
+    --gradient-bg: linear-gradient(to bottom, #04091b, #091540), linear-gradient(to bottom, #fff, #fff);
+    --theme-img:url(../images/icon-sun.svg);
+  }

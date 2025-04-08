@@ -1,0 +1,45 @@
+.text-preset-1 {
+    font-family: 'Noto Sans', sans-serif;
+    font-weight: bold;
+    font-size: 34px;
+    line-height: 1;
+    letter-spacing: 1px;
+}
+
+.text-preset-2 {
+    font-family: 'Noto Sans', sans-serif;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 1.2;
+    letter-spacing: -0.2px;
+}
+
+.text-preset-3 {
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 20px;
+    line-height: 1.4;
+    letter-spacing: -0.3px;
+}
+
+.text-preset-4 {
+    font-family: 'Noto Sans', sans-serif;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 1.4;
+    letter-spacing: -0.3px;
+}
+
+.text-preset-5 {
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 16px;
+    line-height: 1.4;
+    letter-spacing: -0.5px;
+}
+
+.text-preset-6 {
+    font-family: 'Noto Sans', sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.4;
+    letter-spacing: -0.5px;
+}
