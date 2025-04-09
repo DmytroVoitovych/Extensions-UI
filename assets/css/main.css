@@ -3,11 +3,15 @@
 @import "./reuse.css";
 @import "./typography.css";
 
-html:not(.dark){
-header{
-border: 1px solid var(--bor-main);  
-box-shadow: 0 2px 3px 0 #d9e5f4;
-}  
+html:not(.dark) {
+  header {
+    border: 1px solid var(--bor-main);
+    box-shadow: 0 2px 3px 0 #d9e5f4;
+  }
+
+  nav > a:not(.activeLink){
+    box-shadow: 0 1px 2px 0 rgba(184, 196, 215, 0.4);
+    }
 }
 
 body {
@@ -20,9 +24,13 @@ body {
 
 .wrapper {
   padding: 24px 16px;
-  max-width: 1170px;
+  max-width: 512px;
   height: 100%;
   margin: 0 auto;
+
+  @media screen and (min-width: 512px) {
+   max-width: 1200px;    
+  }
 }
 
 header {
@@ -34,21 +42,20 @@ header {
   background-color: var(--bg-block);
   color: var(--txt-logo);
 
-  .extansionLogo{
-  font-family: "Geologica", sans-serif; 
-  font-size: 24px;
-  font-weight: 600;
-  line-height: 1.3;
-  letter-spacing: -0.5px;
-  display: flex;
-  align-items: center;
-  gap: 12px;
+  .extansionLogo {
+    font-family: "Geologica", sans-serif;
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 1.3;
+    letter-spacing: -0.5px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
 
-  & > .icon{
-  width: 40px;
-  height: 41px;  
-  }
-
+    & > .icon {
+      width: 40px;
+      height: 41px;
+    }
   }
 
   & > label {
@@ -67,16 +74,62 @@ header {
     position: absolute;
     top: 50%;
     left: 50%;
-    translate:-50% -50%;
+    translate: -50% -50%;
     border-radius: 6px;
     background-image: var(--theme-img);
     background-repeat: no-repeat;
     background-position: center;
   }
 
-  & > label > input{
+  & > label > input {
     display: contents;
   }
-
 }
 
+main {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  padding-top: 40px;
+  padding-bottom: 64px;
+  container-type: inline-size;
+}
+
+.tabBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  align-items: center;
+
+  @container (min-width: calc((342.9px * 2) + 12px)) {
+    flex-direction: unset;
+    justify-content: space-between;
+   
+  }
+
+  h1 {
+    color: var(--txt-cl-title);
+  }
+
+  nav{
+  display: flex;
+  gap: 12px;
+  color: var(--txt-cl-title);
+  }
+
+  nav >  a{
+  padding: 8px 20px 10px 20px; 
+  border-radius: 999px; 
+  background-color: var(--bg-link);
+  
+  }
+
+  nav > a:not(.activeLink){
+  border: 1px solid var(--bor-tab);  
+  }
+
+  nav > a.activeLink{
+  background-color: var(--bg-active);
+  color: var(--txt-active);  
+  }
+}

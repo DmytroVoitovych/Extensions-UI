@@ -28,6 +28,19 @@
           ><input type="checkbox" name="themeSwitcher" id="themeSwitcher"
         /></label>
       </header>
+      <main>
+        <div class="tabBlock">
+          <h1 class="text-preset-1">Extensions List</h1>
+          <nav class="text-preset-3 navList">
+            <a
+              href="/"
+              class="activeLink"
+              onclick="event.preventDefault(); window.history.pushState({},'','/'); return;"
+              >All</a
+            ><a href="#active">Active</a><a href="#inactive">Inactive</a>
+          </nav>
+        </div>
+      </main>
     </div>
 
     <script type="module" src="./index.js"></script>
