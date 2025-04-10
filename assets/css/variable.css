@@ -4,7 +4,7 @@
     --neutral-800: #202535;
     --neutral-700: #333742;
     --neutral-600: #535868;
-    --neutral-300: #C7C7C7;
+    --neutral-300: #c6c6c6;
     --neutral-200: #d6e2f5;
     --neutral-100: #eeeeee;
     --neutral-0:  #fbfdfe;
@@ -19,19 +19,21 @@
     --bg-border-main:var(--neutral-200);
     --bg-link:var(--neutral-0);
     --bg-active:var(--red-700);
+    --bg-unchecked:var(--neutral-300);
     --bg-border-chackbox:var(--neutral-900);
     
     --logo-cl:var(--red-700); 
     --bor-main:#D6E2F5;
     --bor-tab:var(--neutral-200);
+    --bor-btn:var(--neutral-300);
+
   
     /* txt */
     --txt-logo:var(--neutral-900);
     --txt-cl-main:var(--neutral-900);
     --txt-cl-title:var(--neutral-900);
     --txt-active:var(--neutral-0);
-    --txt-cl-textarea:var(var(--neutral-700));
-    --txt-empty-point:var(--neutral-600);
+    --txt-cl-description:var(--neutral-600);
       
   
     /* Gradients */
@@ -48,10 +50,11 @@
     --bg-link:var(--neutral-700);
     --bg-active:var(--red-400);
     --bg-border-chackbox:var(--neutral-200);
-    --bg-progress:var(--neutral-800);
+    --bg-unchecked:var(--neutral-600);
     
     --logo-cl:var(--red-400); 
     --bor-tab:var(--neutral-600);
+    --bor-btn:var(--neutral-600);
   
     /* txt */
     --txt-logo:#fff;
@@ -59,7 +62,7 @@
     --txt-cl-title:var(--neutral-0);
     --txt-active:var(--neutral-900);
     --txt-cl-textarea:var(var(--neutral-200));
-    --txt-empty-point:var(--neutral-200);
+    --txt-cl-description:var(--neutral-300);
   
     /* Gradients */
     --gradient-bg: linear-gradient(to bottom, #04091b, #091540), linear-gradient(to bottom, #fff, #fff);
