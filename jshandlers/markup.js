@@ -1,6 +1,6 @@
-export const getListChildrenMarkupFromData = (e) => `<li class="extensionItem">
+export const getListChildrenMarkupFromData = (e,i) => `<li class="extensionItem" data-index="${i}">
          <div class="extensionItemHeader">
-         <img src="${e.logo}" alt="${e.name}"/>
+         <img width="60" height="60" src="${e.logo}" alt="${e.name}"/>
          <div class="extensionItemContent">
               <h3 class="text-preset-2">${e.name}</h3>
               <p class="text-preset-5">${e.description}</p>

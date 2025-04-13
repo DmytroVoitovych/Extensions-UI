@@ -137,17 +137,34 @@ main {
   }
 }
 
+/*tab operations*/
+.tabBlock:has(a[href="#active"].activeLink)
+  ~ .extensionsList
+  li:has(input:not(:checked)) {
+  display: none;
+  /* transition:    
+    display 250ms allow-discrete; */
+}
+
+.tabBlock:has(a[href="#inactive"].activeLink)
+  ~ .extensionsList
+  li:has(input:checked) {
+  display: none;
+  /* transition:    
+    display 260ms allow-discrete; */
+}
+
 .extensionsList {
   --grid-max-col-count: 3;
   --grid-min-col-size: 343px;
   --grid-gap: 12px;
 
- 
-
   --grid-col-size-calc: calc(
     (100% - var(--grid-gap) * var(--grid-max-col-count)) / var(--grid-max-col-count)
   );
   --grid-col-min-size-calc: 343px;
+  --max-container-size: 1170px;
+  --max-size-single-col: calc((var(--max-container-size) - var(--grid-gap) * 2) / 2);
 
   display: grid;
   place-items: stretch;
@@ -162,7 +179,6 @@ main {
     place-items: center;
   }
 
-
   & > .extensionItem {
     display: grid;
     padding: 20px;
@@ -170,11 +186,12 @@ main {
     border-radius: 20px;
     background-color: var(--bg-block);
     border: 1px solid var(--bor-tab);
+    max-width: var(--max-size-single-col);
+    width: 100%;
 
     @container (max-width: calc((342.9px * 2) + 12px)) {
       max-width: 375px;
     }
-    
   }
 
   .extensionItemHeader {
@@ -220,6 +237,7 @@ main {
       border-radius: 999px;
       background-color: var(--bg-unchecked);
       transition: background-color 250ms ease-in-out;
+      cursor: pointer;
     }
 
     input {
@@ -231,6 +249,7 @@ main {
       margin: 2px;
       transform: translateX(0px);
       transition: transform 250ms ease-in-out;
+      cursor: pointer;
     }
   }
 }
