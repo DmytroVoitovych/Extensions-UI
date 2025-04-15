@@ -24,7 +24,6 @@ const setInitialTab = (currentTarget,callback) => {
     return;
   };
 
-
 const setActiveLink = (e) => {
   
   const target = e.target.closest("a");

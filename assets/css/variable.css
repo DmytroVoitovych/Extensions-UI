@@ -21,6 +21,7 @@
     --bg-active:var(--red-700);
     --bg-unchecked:var(--neutral-300);
     --bg-border-chackbox:var(--neutral-900);
+    --bg-hover:var(--neutral-300);
     
     --logo-cl:var(--red-700); 
     --bor-main:#D6E2F5;
@@ -51,6 +52,7 @@
     --bg-active:var(--red-400);
     --bg-border-chackbox:var(--neutral-200);
     --bg-unchecked:var(--neutral-600);
+    --bg-hover:var(--neutral-600);
     
     --logo-cl:var(--red-400); 
     --bor-tab:var(--neutral-600);

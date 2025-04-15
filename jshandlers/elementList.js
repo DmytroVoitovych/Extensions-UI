@@ -6,6 +6,4 @@ const extensionsList = getEl(".extensionsList");
 const onlyChromeBox = getEl("#realDataSwitcher");
 
 
-
-
 export {themeSwitcher,navList,extensionsList,onlyChromeBox};

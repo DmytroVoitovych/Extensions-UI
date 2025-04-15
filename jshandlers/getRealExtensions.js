@@ -17,7 +17,7 @@ const makeFinalObject = async (id,name) => {
     .then((text) => {
      const div = document.createElement("div");
       div.innerHTML = text;
-      console.log(div);
+      
      description = div.querySelector("meta[name=description]")?.content;
      logo = div.querySelector('meta[property="og:image"]')?.content;
 

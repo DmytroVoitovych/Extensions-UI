@@ -77,6 +77,19 @@ header {
     height: 50px;
     background-color: var(--bg-theme-switcher);
     border-radius: 12px;
+    transition: background-color 250ms ease-in-out;
+
+    @media (hover: hover) {
+      &:hover {
+        cursor: pointer;
+        background-color: var(--bg-hover);
+      }
+    }
+
+    &:has(input:focus-visible) {
+      outline: 2px solid var(--bg-active);
+      outline-offset: 2px;
+    }
   }
 
   & > label::before {
@@ -110,8 +123,18 @@ header {
     content: "Fake data";
   }
 
+  &:not(:has(input:checked)):before {
+    text-decoration: underline;
+    text-decoration-color: var(--bg-active);
+  }
+
   &::after {
     content: "Real data";
+  }
+
+  &:has(input:checked):after {
+    text-decoration: underline;
+    text-decoration-color: var(--bg-active);
   }
 
   label:has(input:checked) {
@@ -130,6 +153,11 @@ header {
     transition: background-color 250ms ease-in-out;
     cursor: pointer;
     position: relative;
+
+    &:has(input:focus-visible) {
+      outline: 2px solid var(--bg-active);
+      outline-offset: 2px;
+    }
   }
 
   input {
@@ -179,10 +207,26 @@ main {
     padding: 8px 20px 10px 20px;
     border-radius: 999px;
     background-color: var(--bg-link);
+    transition: background-color 250ms ease-in-out;
+
+    &:focus-visible {
+      outline: 2px solid var(--bg-active);
+      outline-offset: 2px;
+    }
   }
 
   nav > a:not(.activeLink) {
     border: 1px solid var(--bor-tab);
+
+    @media (hover: hover) {
+      &:hover {
+        background-color: var(--bg-hover);
+      }
+    }
+
+    &:focus-visible {
+      background-color: var(--bg-hover);
+    }
   }
 
   nav > a.activeLink {
@@ -192,6 +236,20 @@ main {
 }
 
 /*tab operations*/
+.tabBlock:has(a[href="#active"].activeLink)
+  ~ .extensionsList:not(:has([aria-checked="true"]))
+  + .emptyState {
+  display: block;
+  text-align: center;
+}
+
+.tabBlock:has(a[href="#inactive"].activeLink)
+  ~ .extensionsList:not(:has([aria-checked="false"]))
+  + .emptyState {
+  display: block;
+  text-align: center;
+}
+
 .tabBlock:not(:has(a[href="#*"].activeLink))
   ~ .extensionsList
   li:not(.removeAnimation) {
@@ -214,6 +272,18 @@ main {
   transition: scale 250ms ease-in-out 250ms, opacity 250ms ease-in-out 250ms,
     display 250ms allow-discrete 250ms;
 
+  @supports (-moz-user-select: none) {
+    display: grid;
+
+    &:has([aria-checked="false"]) {
+      display: none;
+    }
+
+    &.removeAnimation {
+      display: none;
+    }
+  }
+
   @starting-style {
     opacity: 1;
     scale: 1;
@@ -231,7 +301,7 @@ main {
 
   @supports (-moz-user-select: none) {
     display: grid;
-   
+
     &:has([aria-checked="true"]) {
       display: none;
     }
@@ -282,7 +352,7 @@ main {
     border: 1px solid var(--bor-tab);
     max-width: var(--max-size-single-col);
     width: 100%;
-    transform: translate(0, 0);
+    grid-template-rows: 1fr;
 
     @container (max-width: calc((342.9px * 2) + 12px)) {
       max-width: 375px;
@@ -320,6 +390,24 @@ main {
       border-radius: 999px;
       border: 1px solid var(--bor-btn);
       color: var(--txt-cl-title);
+      transition: background-color 250ms ease-in-out;
+
+      @media (hover: hover) {
+        &:hover {
+          cursor: pointer;
+          background-color: var(--bg-hover);
+        }
+      }
+
+      &:active {
+        background-color: var(--bg-active);
+      }
+
+      &:focus-visible {
+        outline: 2px solid var(--bg-active);
+        outline-offset: 2px;
+        background-color: var(--bg-hover);
+      }
     }
 
     label:has(input:checked) {
@@ -337,6 +425,11 @@ main {
       background-color: var(--bg-unchecked);
       transition: background-color 250ms ease-in-out;
       cursor: pointer;
+
+      &:has(input:focus-visible) {
+        outline: 2px solid var(--bg-active);
+        outline-offset: 2px;
+      }
     }
 
     input {
@@ -349,6 +442,27 @@ main {
       transform: translateX(0px);
       transition: transform 250ms ease-in-out;
       cursor: pointer;
+
+      &:focus-visible {
+        outline: unset;
+        border: none;
+      }
     }
+  }
+}
+
+.emptyState {
+  display: none;
+  color: var(--txt-cl-title);
+}
+
+.extensionsList:empty + .emptyState {
+  display: block;
+  text-align: center;
+  opacity: 1;
+  transition: opacity 1250ms ease-in-out;
+
+  @starting-style {
+    opacity: 0;
   }
 }
