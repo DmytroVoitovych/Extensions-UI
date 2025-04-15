@@ -3,6 +3,11 @@
 @import "./reuse.css";
 @import "./typography.css";
 
+html {
+  background-image: var(--gradient-bg);
+  overflow-y: hidden;
+}
+
 html:not(.dark) {
   header {
     border: 1px solid var(--bor-main);
@@ -23,8 +28,9 @@ body {
   font-family: "Noto Sans", sans-serif;
   font-size: 16px;
   line-height: 1.5;
-  min-height: 100svh;
-  background-image: var(--gradient-bg);
+  height: 100svh;
+  scrollbar-gutter: stable;
+  overflow-y: auto;
 }
 
 .wrapper {
@@ -46,6 +52,7 @@ header {
   border-radius: 10px;
   background-color: var(--bg-block);
   color: var(--txt-logo);
+  position: relative;
 
   .extansionLogo {
     font-family: "Geologica", sans-serif;
@@ -88,6 +95,53 @@ header {
 
   & > label > input {
     opacity: 0;
+  }
+}
+
+#realDataSwitcher {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  top: calc(100% + 8px);
+  left: 0;
+
+  &::before {
+    content: "Fake data";
+  }
+
+  &::after {
+    content: "Real data";
+  }
+
+  label:has(input:checked) {
+    background-color: var(--bg-border-chackbox);
+
+    input {
+      transform: translateX(100%);
+    }
+  }
+
+  label {
+    display: flex;
+    width: 36px;
+    border-radius: 999px;
+    background-color: var(--bg-border-main);
+    transition: background-color 250ms ease-in-out;
+    cursor: pointer;
+    position: relative;
+  }
+
+  input {
+    width: 16px;
+    height: 16px;
+    appearance: none;
+    border-radius: 9999px;
+    background-color: var(--neutral-0);
+    margin: 2px;
+    transform: translateX(0px);
+    transition: transform 250ms ease-in-out;
+    cursor: pointer;
   }
 }
 
@@ -138,20 +192,59 @@ main {
 }
 
 /*tab operations*/
+.tabBlock:not(:has(a[href="#*"].activeLink))
+  ~ .extensionsList
+  li:not(.removeAnimation) {
+  opacity: 1;
+  scale: 1;
+  transition: scale 250ms ease-in-out, opacity 250ms ease-in-out;
+
+  @starting-style {
+    opacity: 0;
+    scale: 0.1;
+  }
+}
+
 .tabBlock:has(a[href="#active"].activeLink)
   ~ .extensionsList
   li:has(input:not(:checked)) {
   display: none;
-  /* transition:    
-    display 250ms allow-discrete; */
+  opacity: 0;
+  scale: 0.1;
+  transition: scale 250ms ease-in-out 250ms, opacity 250ms ease-in-out 250ms,
+    display 250ms allow-discrete 250ms;
+
+  @starting-style {
+    opacity: 1;
+    scale: 1;
+  }
 }
 
 .tabBlock:has(a[href="#inactive"].activeLink)
   ~ .extensionsList
   li:has(input:checked) {
   display: none;
-  /* transition:    
-    display 260ms allow-discrete; */
+  opacity: 0;
+  scale: 0.1;
+  transition: scale 250ms ease-in-out 250ms, opacity 250ms ease-in-out 250ms,
+    display 250ms allow-discrete 250ms;
+
+  @supports (-moz-user-select: none) {
+    display: grid;
+   
+    &:has([aria-checked="true"]) {
+      display: none;
+    }
+
+    &.removeAnimation {
+      display: none;
+    }
+  }
+
+  @starting-style {
+    opacity: 1;
+    scale: 1;
+  }
 }
 
 .extensionsList {
@@ -166,6 +259,7 @@ main {
   --max-container-size: 1170px;
   --max-size-single-col: calc((var(--max-container-size) - var(--grid-gap) * 2) / 2);
 
+  position: relative;
   display: grid;
   place-items: stretch;
   gap: 12px;
@@ -188,6 +282,7 @@ main {
     border: 1px solid var(--bor-tab);
     max-width: var(--max-size-single-col);
     width: 100%;
+    transform: translate(0, 0);
 
     @container (max-width: calc((342.9px * 2) + 12px)) {
       max-width: 375px;
@@ -198,6 +293,10 @@ main {
     display: flex;
     gap: 16px;
     align-items: flex-start;
+
+    img {
+      border-radius: 10px;
+    }
   }
 
   .extensionItemContent {

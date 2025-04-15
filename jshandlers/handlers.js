@@ -1,3 +1,5 @@
+
+
 const setUserTheme = () => {
   const themeDark = !!window.localStorage.getItem("theme");
   if (themeDark) document.documentElement.classList.add("dark");
@@ -36,4 +38,11 @@ const setActiveLink = (e) => {
   target.classList.add("activeLink");
 };
 
-export { setUserTheme, switchTheme,setActiveLink, setInitialTab };
+const removeSwitcherIfIsNotChrome = (isChrome,el) => {
+  if (!isChrome) el.remove();
+ el.classList.remove("visually-hidden");
+   
+};
+
+
+export { setUserTheme, switchTheme,setActiveLink, setInitialTab,removeSwitcherIfIsNotChrome };

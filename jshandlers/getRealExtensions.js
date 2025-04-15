@@ -1,6 +1,6 @@
 import { extensionsIdList } from "./extensionsIdList.js";
 
-const isChrome =
+export const isChrome =
   /Chrome/.test(navigator.userAgent) &&
   navigator.userAgentData.brands.some(({ brand }) => brand === "Google Chrome") &&
   window.chrome !== undefined;
