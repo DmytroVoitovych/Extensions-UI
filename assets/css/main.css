@@ -460,7 +460,7 @@ main {
   display: block;
   text-align: center;
   opacity: 1;
-  transition: opacity 1250ms ease-in-out;
+  transition: opacity 1250ms ease-in-out 1250ms;
 
   @starting-style {
     opacity: 0;
