@@ -31,6 +31,8 @@ body {
   height: 100svh;
   scrollbar-gutter: stable;
   overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior: none;
 }
 
 .wrapper {
