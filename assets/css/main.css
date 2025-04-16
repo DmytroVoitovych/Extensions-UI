@@ -6,6 +6,9 @@
 html {
   background-image: var(--gradient-bg);
   overflow-y: hidden;
+  min-height:100vh;
+  min-height: 100svh;
+  height: 100%;
 }
 
 html:not(.dark) {
