@@ -8,6 +8,8 @@ html {
   overflow-y: hidden;
     -webkit-overflow-scrolling: touch;
   overscroll-behavior: none;
+  min-height: 100vh;
+  height: 100%;
 }
 
 html:not(.dark) {
@@ -30,7 +32,7 @@ body {
   font-family: "Noto Sans", sans-serif;
   font-size: 16px;
   line-height: 1.5;
-  height: 100vh;
+  height: 100%;
   
   
   scrollbar-gutter: stable;
