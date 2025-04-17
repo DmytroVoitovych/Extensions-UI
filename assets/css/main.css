@@ -5,11 +5,14 @@
 
 html {
   background-image: var(--gradient-bg);
+  background-attachment: fixed;
+  background-size: cover;
   overflow-y: hidden;
     -webkit-overflow-scrolling: touch;
   overscroll-behavior: none;
   min-height: 100vh;
   height: 100%;
+ 
 }
 
 html:not(.dark) {
