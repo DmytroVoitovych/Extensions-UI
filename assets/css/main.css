@@ -6,7 +6,7 @@
 html {
   background-image: var(--gradient-bg);
   background-attachment: fixed;
-  background-size: cover;
+   background-size: 100lvw 100lvh;
   -webkit-overflow-scrolling: touch;
   overflow-y: hidden;
   overscroll-behavior: none;
