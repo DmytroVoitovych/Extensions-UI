@@ -10,7 +10,7 @@ html {
   -webkit-overflow-scrolling: touch;
   overflow-y: hidden;
   overscroll-behavior: none;
-  min-height: 100dvh;
+  min-height: 100lvh;
 
  
 }
