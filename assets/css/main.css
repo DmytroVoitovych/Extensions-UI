@@ -13,14 +13,7 @@ html {
   overscroll-behavior: none;
   min-height: 100lvh;
 
- &::after{
-content:'';
-position:fixed;
-width:100vw;
-height:100vh;
-background-image: var(--gradient-bg);
-background-size: 100lvw 100lvh;
-}
+
 }
 
 html:not(.dark) {
@@ -61,6 +54,16 @@ body {
   background-image: var(--gradient-bg);
   background-attachment: fixed;
   background-size: cover;
+position: relative;
+
+   &::after{
+content:'';
+position:fixed;
+width:100vw;
+height:100vh;
+background-image: var(--gradient-bg);
+background-size: 100lvw 100lvh;
+}
 
   
 
