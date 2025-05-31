@@ -48,7 +48,7 @@ body {
 .wrapper {
   padding: 24px 16px;
   max-width: 512px;
-  height: 100%;
+  height: 100dvh;
   margin: 0 auto;
   background-image: var(--gradient-bg);
   background-attachment: fixed;
