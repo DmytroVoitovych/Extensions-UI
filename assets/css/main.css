@@ -8,8 +8,9 @@ html {
   background-attachment: fixed;
   background-size: cover;
   -webkit-overflow-scrolling: touch;
+  overflow-y: hidden;
   overscroll-behavior: none;
-  height: 100vh;
+  min-height: 100dvh;
 
  
 }
