@@ -7,14 +7,10 @@ html {
   background-image: var(--gradient-bg);
   background-attachment: fixed;
   background-size: cover;
-  overflow-y: hidden;
-    -webkit-overflow-scrolling: touch;
+  -webkit-overflow-scrolling: touch;
   overscroll-behavior: none;
-  min-height: 100vh;
-  height: 100%;
- height: calc(100% + env(safe-area-inset-top));
-  padding-top: env(safe-area-inset-top);
-  padding-bottom: env(safe-area-inset-bottom);
+  height: 100vh;
+
  
 }
 
@@ -56,9 +52,7 @@ body {
   background-image: var(--gradient-bg);
   background-attachment: fixed;
   background-size: cover;
-  height: calc(100% + env(safe-area-inset-top));
-  padding-top: env(safe-area-inset-top);
-  padding-bottom: env(safe-area-inset-bottom);
+
   
 
   @media screen and (min-width: 512px) {
