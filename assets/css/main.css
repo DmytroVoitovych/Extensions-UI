@@ -3,6 +3,18 @@
 @import "./reuse.css";
 @import "./typography.css";
 
+
+.bg {
+  background-image: var(--gradient-bg);
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  /* z-index usage is up to you.. although there is no need of using it because the default stack context will work. */
+  z-index: -1; // this is optional
+}
+
 html {
   position:relative;
   background-image: var(--gradient-bg);
